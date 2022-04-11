@@ -67,7 +67,42 @@ public class FuctionToLamdaExpression {
 		b4.method2(4);
 		b5.method2(5);
 		
-		// 3. 
+		// 3. C클래스 구현(입력매개변수X,리턴타입 O)
+			// (1) 익명 이너클래스
+		C c1 = new C() {
+			@Override
+			public int method3() {
+				// TODO Auto-generated method stub
+				return 4;
+			}
+		};
+		System.out.println(c1.method3());
+		
+			// (2) 람다식
+		C c2 = () -> {return 5;}; // 전체 구문
+		C c3 = () -> 8;  // 축약구문 -> return이 한라인으로 적용된 경우 : return생략가능  !!!반드시 중괄호와 함께 생략해야 함!!!
+		System.out.println("돌려받은 값은 : " + c2.method3());
+		System.out.println("돌려받은 값은 : " + c3.method3());
+		
+		// 4. D클래스 구현(입력매개변수 O, 리턴타입)
+			// (1) 익명 이너클래스
+		D d1 = new D() {
+
+			@Override
+			public double method4(int a, int b) {
+				// TODO Auto-generated method stub
+				return a+b;
+			}
+		};
+		System.out.println("두수의 합은 : " + d1.method4(8, 10));
+		
+			// (2) 람다식
+		D d2 = (int a, int b) -> {return a+b;}; // 전체구문
+		D d3 = (a,b) -> {return a+b;};  // 축약구문 -> input타입 생략가능(D인터페이스에 정의되어있기 때문에)
+		D d4 = (a,b) ->  a+b;   // 축약구문 -> return이 한 라인(;한개)으로 구성되어 있으면 return생략가능 !!!중괄호와 함께 생략하기!!!
+		System.out.println("두수의 합은 : " + d1.method4(810, 10));
+		
 	}
 
 }
+
