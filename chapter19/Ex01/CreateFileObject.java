@@ -44,7 +44,6 @@ public class CreateFileObject {
 		
 		//3. 파일 구분자
 		File newFile2 = new File("C:\\temp002\\newfile01.txt");  //Windows10하위버전
-		File newFile3 = new 
 		
 		
 		
