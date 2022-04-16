@@ -32,8 +32,9 @@ public class InputStreamReader_1 {
 		// 2. FileInputStream + InputStreamReader을 이용한 파일 읽기
 			// InputStreamReader(is, "encoding") 을 장착해서 UTF-8도 읽을 수 있게
 				// byte데이터를 char포멧으로 변환하는 객체
-		try (InputStream iStream = new FileInputStream(isr);	// 기반 스트림 필요
+		try (InputStream iStream = new FileInputStream(isr);	
 			InputStreamReader isreader = new InputStreamReader(iStream, "UTF-8");// FilterStream
+					//isr(byte) ===> isreader(char)
 				){
 			int data;
 			while ((data = isreader.read()) != -1) {
